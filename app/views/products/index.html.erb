@@ -1,0 +1,28 @@
+<h1>Nos vins</h1>
+<%= link_to request.params.merge(category: "red") %>
+
+<div class="cards">
+  <%@products.each do |product|%>
+    <div class="card-product m-2">
+      <%= link_to product_reviews_path(product) do %>
+        <%= image_tag product.image_url %>
+        <div class="card-product-infos">
+          <h2><%= product.name.upcase%></h2>
+          <p><%= product.category.capitalize%></p>
+          <p><%= product.origin.upcase %></p>
+          <p><%= product.description %></p>
+          <strong><p><%= product.price %>€</p></strong>
+          <strong><p>Le note des clients: <%= product.rate %>/5</p></strong>
+
+          <%# Permet d'afficher la note des experts sur l'index products mais trouver solution pour refactoriser %>
+          <%# <% @sum = 0 %>
+          <%# <% Review.all.where(product_id: product.id).each do |review| %>
+            <%# <% @sum += review.rate %>
+          <%# <% end %>
+          <%# <%=@sum/Review.all.where(product_id: product.id).count%>
+
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
