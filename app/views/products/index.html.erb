@@ -1,8 +1,22 @@
 <h1>Nos vins</h1>
-<%= link_to request.params.merge(category: "red") %>
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :min_price, params[:min_price], class: "form-control m-2",
+        placeholder: "min price"
+      %>
+       <%= text_field_tag :max_price, params[:max_price], class: "form-control m-2",
+        placeholder: "max price"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</nav>
+<%# <%= link_to request.params.merge(category: "red") %>
 
 <div class="cards">
-  <%@products.each do |product|%>
+  <% @products.each do |product| %>
     <div class="card-product m-2">
       <%= link_to product_reviews_path(product) do %>
         <%= image_tag product.image_url %>

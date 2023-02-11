@@ -22,7 +22,7 @@ john = User.create!(
     description: 'Excellent vin',
     category: 'vin blanc',
     origin: 'jura',
-    price: 19.9,
+    price: rand(10..30),
     image_url: '/assets/vin_jaune.jpg',
     rate: rand(2..5)
   )
@@ -32,7 +32,7 @@ john = User.create!(
     description: 'Excellent vin',
     category: 'vin rouge',
     origin: 'bordeaux',
-    price: 25.5,
+    price: rand(10..30),
     image_url: '/assets/red_wine.jpg',
     rate: rand(2..5)
   )
@@ -42,7 +42,7 @@ john = User.create!(
     description: 'Excellent vin',
     category: 'vin rosé',
     origin: 'languedoc',
-    price: 20,
+    price: rand(10..30),
     image_url: '/assets/rose_wine.jpg',
     rate: rand(2..5)
   )
