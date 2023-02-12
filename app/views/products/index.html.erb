@@ -25,14 +25,6 @@
           <p><%= product.origin.upcase %></p>
           <strong><p><%= product.price %>€</p></strong>
           <strong><p>Le note des clients: <%= product.rate %>/5</p></strong>
-
-          <%# Permet d'afficher la note des experts sur l'index products mais trouver solution pour refactoriser %>
-          <%# <% @sum = 0 %>
-          <%# <% Review.all.where(product_id: product.id).each do |review| %>
-            <%# <% @sum += review.rate %>
-          <%# <% end %>
-          <%# <%=@sum/Review.all.where(product_id: product.id).count%>
-
         </div>
       <% end %>
     </div>
