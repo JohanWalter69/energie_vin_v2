@@ -1,2 +1,15 @@
 
-<p>La note des experts est de: <%=@average%>/5</p>
+<%= link_to 'Retour', root_path %>
+<div class="cards">
+  <div class="card-product m-2">
+    <%= image_tag @product.image_url %>
+    <div class="card-product-infos">
+      <h2><%= @product.name.upcase%></h2>
+      <p><%= @product.category.capitalize%></p>
+      <p><%= @product.origin.upcase %></p>
+      <p><%= @product.description %></p>
+      <p><%= @product.price %>€</p>
+      <p class="fw-bold"> Nos experts lui donnent le note de : <%=@average%>/5</p>
+    </div>
+  </div>
+</div>
