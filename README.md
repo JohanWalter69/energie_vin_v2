@@ -1,1 +1,18 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+1.// Récupérer le projet en le clonant avec le repo public //
+mkdir ~/code/OWNER_GITHUB_USERNAME
+cd ~/code/OWNER_GITHUB_USERNAME
+git clone git@github.com:git@github.com:JohanWalter69/energie_vin.git
+cd energie_vin
+
+2.// Les gems utilisées //
+Lancer une bundle install et vérifier que les gems suivantes sont disponibles :
+gem install 'nokogiri'
+gem install 'open-uri'
+gem insall 'devise'
+
+3.// Lancer la migration de la DB //
+rails db:create
+rails db:migrate 
+
+4.// Lancer la seed //
+rails db:seed
