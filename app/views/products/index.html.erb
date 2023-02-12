@@ -1,7 +1,7 @@
-<h1>Nos vins</h1>
+<h1 class="text-center">Bienvenue sur Energie Vin</h1>
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
+<nav class="navbar navbar-light bg-light text-center">
+  <div class="container-fluid justify-content-md-center">
     <%= form_with url: root_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :min_price, params[:min_price], class: "form-control m-2",
         placeholder: "min price"

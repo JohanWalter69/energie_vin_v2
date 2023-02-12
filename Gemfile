@@ -78,3 +78,6 @@ end
 
   #Authentification and Authorization
 gem "devise"
+
+gem 'open-uri'
+gem 'nokogiri'
