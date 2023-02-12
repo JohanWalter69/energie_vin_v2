@@ -19,13 +19,13 @@ html_content = File.open(filepath)
 doc = Nokogiri::HTML.parse(html_content)
 
 # Version scraping online
-# url = "https://www.wineandco.com/search?term=vins"
+# url = "https://www.wineandco.com/vins"
 # html_content = URI.open(url).read
 # doc = Nokogiri::HTML.parse(html_content)
 
 @g_products = []
 
-doc.search('.c-wine').first(10).each do |element|
+doc.search('.c-wine').first(30).each do |element|
   name = element.search(".name").text.strip
   image_url = element.search('.c-wine__picture__img').children[1].attr('src')
 
