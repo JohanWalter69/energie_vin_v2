@@ -1,0 +1,13 @@
+.custom_banner{
+  background-image: url('banner.jpg');
+  width: 100%;
+  background-size: cover;
+  height: 30vh;
+  color: white;
+
+  h1{
+    transform: translateY(30%);
+    height: 100%;
+    font-weight: 900;
+  }
+}
