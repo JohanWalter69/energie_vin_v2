@@ -5,7 +5,7 @@ gh repo clone JohanWalter69/energie_vin
 cd energie_vin
 
 2.// Les gems utilisées //
-Lancer bundle install et vérifier que les gems suivantes sont disponibles :
+Lancer bundle install / yarn install et vérifier que les gems suivantes sont disponibles, sinon lancer :
 gem install 'nokogiri'
 gem install 'open-uri'
 gem insall 'devise'
