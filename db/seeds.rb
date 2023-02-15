@@ -25,7 +25,7 @@ doc = Nokogiri::HTML.parse(html_content)
 
 @g_products = []
 
-doc.search('.c-wine').first(30).each do |element|
+doc.search('.c-wine').first(10).each do |element|
   name = element.search(".name").text.strip
   image_url = element.search('.c-wine__picture__img').children[1].attr('src')
 
@@ -60,11 +60,13 @@ end
 
 # Pour chaque produit crée une revue d'expert est attribué / à développer
 @g_products.each do |product|
-  Review.create!(
-    rate: rand(1..5),
-    user: john,
-    product: product
-  )
+  5.times do
+    Review.create!(
+      rate: rand(1..5),
+      user: john,
+      product: product
+    )
+  end
 end
 
 # Seed initiale créée pour le développement du parcours utilisateur

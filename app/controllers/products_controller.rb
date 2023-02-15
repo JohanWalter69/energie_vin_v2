@@ -4,6 +4,12 @@ class ProductsController < ApplicationController
     search
   end
 
+  def show
+    @product = Product.find(params[:id])
+    @reviews = Review.where(product_id: @product.id)
+    average_rate
+  end
+
   private
 
   def search
@@ -12,5 +18,13 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
+  end
+
+  def average_rate
+    @sum = 0
+    @reviews.each do |review|
+      @sum += review.rate
+    end
+    return @average = @sum / @reviews.count
   end
 end

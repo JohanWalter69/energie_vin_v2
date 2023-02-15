@@ -1,0 +1,6 @@
+<div class="review-form">
+  <%= simple_form_for @review do |f| %>
+    <%= f.input :rate, :label => 'Read  this wine /5' %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
