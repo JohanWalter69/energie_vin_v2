@@ -1,7 +1,7 @@
 1.// Récupérer le projet en le clonant avec le repo public //
 mkdir ~/code/OWNER_GITHUB_USERNAME
 cd ~/code/OWNER_GITHUB_USERNAME
-git clone git@github.com:git@github.com:JohanWalter69/energie_vin.git ou gh repo clone JohanWalter69/energie_vin
+gh repo clone JohanWalter69/energie_vin
 cd energie_vin
 
 2.// Les gems utilisées //
