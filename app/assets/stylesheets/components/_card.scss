@@ -4,6 +4,16 @@
   justify-content: center;
 }
 
+.card-product-details {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 90%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 4px;
+}
+
 .card-product {
   overflow: hidden;
   width: 30%;
@@ -42,9 +52,28 @@
   color: black;
 }
 
-.rating-card{
+.rating-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
+  width: 90%;
+  margin: 20px auto;
+  gap: 4px;
+}
+
+.rating-card{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 5vh;
+  width: 40%;
   border: 1px solid black;
-  width: 30%;
-  margin: 10px auto;
+
+  .avatar{
+    height: 100%;
+    border-radius: 50%;
+    margin: 2px;
+  }
 }

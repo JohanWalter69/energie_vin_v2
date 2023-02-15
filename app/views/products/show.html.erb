@@ -1,34 +1,26 @@
 <%= link_to 'Retour', root_path %>
 <div class="cards">
-  <div class="card-product m-2">
+  <div class="card-product-details m-2">
     <%= image_tag @product.image_url %>
     <div class="card-product-infos">
       <h2><%= @product.name.upcase%></h2>
       <p><%= @product.category.capitalize%></p>
       <p><%= @product.origin.upcase %></p>
       <p><%= @product.description %></p>
-      <p><%= @product.price %>€</p>
+      <p>Prix : <%= @product.price %>€</p>
       <p class="fw-bold"> Nos experts lui donnent le note de : <%=@average.round(1)%>/5</p>
+      <% if @user && @user.expert? %>
+        <%= link_to 'Add a review', new_product_review_path(@product), class:"btn btn-primary mb-2" %>
+      <% end %>
     </div>
   </div>
 </div>
 
-<div class = "rating-card">
-  <% if @user.nil? %>
-    <%@reviews.each do |review| %>
-      <p><%=review.user.email%> donne la note de <%= review.rate %>/5</p>
-    <% end %>
-
-  <% elsif @user.expert? %>
-    <% @reviews.each do |review| %>
-      <p><%=review.user.email%> donne la note de <%= review.rate %>/5</p>
-    <% end %>
-    <%= link_to 'Add a review', new_product_review_path(@product), class:"btn btn-primary mb-2" %>
-
+<div class = "rating-cards">
+  <%= render 'shared/rating-card' %> <% if @user.nil? %>
+  <%= render 'shared/rating-card' %> <% elsif @user.expert? %>
   <% else %>
-    <%@reviews.each do |review| %>
-      <p><%=review.user.email%> donne la note de <%= review.rate %>/5</p>
-    <% end %>
-    <p>You are an expert and you want to help us ? Contact us and share your knowledge!</p>
+    <%= render 'shared/rating-card' %>
+    <p class='mt-4'>You are an expert and you want to help us ? Contact us and share your knowledge!</p>
   <% end %>
 </div>

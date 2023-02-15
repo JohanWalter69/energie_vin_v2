@@ -1,0 +1,6 @@
+<% @reviews.each do |review| %>
+  <div class="rating-card">
+    <%= image_tag 'avatar.jpg', class:'avatar' %>
+    <p><%=review.user.email%> donne la note de <%= review.rate %>/5</p>
+  </div>
+<% end %>
