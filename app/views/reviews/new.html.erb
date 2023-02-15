@@ -1,5 +1,7 @@
+<%= link_to 'Retour', product_path(@product) %>
+
 <div class="review-form">
-  <%= simple_form_for @review do |f| %>
+  <%= simple_form_for [@product, @review] do |f| %>
     <%= f.input :rate, :label => 'Read  this wine /5' %>
     <%= f.button :submit %>
   <% end %>

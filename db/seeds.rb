@@ -11,6 +11,12 @@ john = User.create!(
   expert: true
 )
 
+bill = User.create!(
+  password: 'secret',
+  email: 'bill@gmail.com',
+  expert: false
+)
+
 # Version avec scraping de la page téléchargée en local
 filepath = "/home/johan/code/energie_vin/results.html"
 # 1. On obtient le contenu de la page HTML

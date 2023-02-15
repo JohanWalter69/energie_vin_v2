@@ -8,14 +8,27 @@
       <p><%= @product.origin.upcase %></p>
       <p><%= @product.description %></p>
       <p><%= @product.price %>€</p>
-      <p class="fw-bold"> Nos experts lui donnent le note de : <%=@average%>/5</p>
+      <p class="fw-bold"> Nos experts lui donnent le note de : <%=@average.round(1)%>/5</p>
     </div>
   </div>
 </div>
 
 <div class = "rating-card">
-  <%@reviews.each do |review| %>
-    <p><%=review.user.email%> donne la note de <%= review.rate %>/5</p>
+  <% if @user.nil? %>
+    <%@reviews.each do |review| %>
+      <p><%=review.user.email%> donne la note de <%= review.rate %>/5</p>
+    <% end %>
+
+  <% elsif @user.expert? %>
+    <% @reviews.each do |review| %>
+      <p><%=review.user.email%> donne la note de <%= review.rate %>/5</p>
+    <% end %>
+    <%= link_to 'Add a review', new_product_review_path(@product), class:"btn btn-primary mb-2" %>
+
+  <% else %>
+    <%@reviews.each do |review| %>
+      <p><%=review.user.email%> donne la note de <%= review.rate %>/5</p>
+    <% end %>
+    <p>You are an expert and you want to help us ? Contact us and share your knowledge!</p>
   <% end %>
-  <%= link_to 'Add a review', new_product_review_path(@product), class:"btn btn-primary mb-2" %>
 </div>
