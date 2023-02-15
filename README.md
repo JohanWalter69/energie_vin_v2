@@ -19,3 +19,4 @@ rails db:seed
 
 Si scraping online impossible => télécharger la page en local
 curl -H "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0"  https://www.wineandco.com/vins > results.html
+# energie_vin_v2
