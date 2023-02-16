@@ -16,6 +16,10 @@ class ProductsController < ApplicationController
   def search
     if params[:min_price].present? && params[:max_price].present?
       @products = Product.where(price: params[:min_price]..).where(price: ..params[:max_price])
+    elsif params[:min_price].present?
+      @products = Product.where(price: params[:min_price]..)
+    elsif params[:max_price].present?
+      @products = Product.where(price: ..params[:max_price])
     else
       @products = Product.all
     end
