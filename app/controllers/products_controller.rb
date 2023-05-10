@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
 
   private
 
+# Voir pour refacto les lignes ci-dessous et poser la condition Product.all en premier
   def search
     if params[:min_price].present? && params[:max_price].present?
       @products = Product.where(price: params[:min_price]..).where(price: ..params[:max_price])
@@ -24,6 +25,13 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
   end
+
+# Méthode refactoriser / à tester
+  # def search
+  #   @products = Product.all
+  #   @products = @products.where("price >= ?", params[:min_price]) if params[:min_price].present?
+  #   @products = @products.where("price <= ?", params[:max_price]) if params[:max_price].present?
+  # end
 
   def average_rate
     @sum = 0

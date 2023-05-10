@@ -64,7 +64,7 @@ doc.search('.c-wine').first(10).each do |element|
   )
 end
 
-# Pour chaque produit crée une revue d'expert est attribué / à développer
+# Pour chaque produit crée une revue d'expert est attribuée / à développer
 @g_products.each do |product|
   5.times do
     Review.create!(
